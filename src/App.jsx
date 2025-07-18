@@ -7,6 +7,7 @@ import WhoPage from "./WhoPage/MainWho";
 import MainServices from "./ServicesPage/MainServices";
 import MainSolution from "./Solutions/MainSolution";
 import NewsDetails from "./NewsDetails";
+import Partnership from "./Partnership";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="/news/:slug" element={<NewsDetails />} />
+          <Route path="/partnership" element={<Partnership />} />
         </Route>
         <Route path="/who" element={<Layout />}>
           <Route index element={<WhoPage />} />
