@@ -40,14 +40,10 @@ const SolutionTwo = () => {
           <br />
           <br />
           The Omega Block system is built using interlocking precast concrete
-          units that are dry-stacked and secured with{" "}
-          <a href="#" className="text-blue-600 underline">
-            geogrid
-          </a>{" "}
-          reinforcements. These blocks are designed to provide high stability
-          while allowing flexibility in design, making them ideal for projects
-          that require durability, ease of installation, and architectural
-          finish.
+          units that are dry-stacked and secured with geogrid reinforcements.
+          These blocks are designed to provide high stability while allowing
+          flexibility in design, making them ideal for projects that require
+          durability, ease of installation, and architectural finish.
         </p>
         <div className="flex items-center mb-2">
           <span className="mr-2"></span>
@@ -87,9 +83,9 @@ const SolutionTwo = () => {
               <b>Reinforced Stability</b>
               <br />
               When combined with{" "}
-              <a href="#" className="text-blue-600 underline">
+
                 geogrid
-              </a>
+
               , Omega Blocks offer exceptional load-bearing capacity and
               resistance to movement.
             </div>
@@ -110,11 +106,7 @@ const SolutionTwo = () => {
           systems that stand the test of time.
         </p>
         <p className="mb-5 leading-relaxed">
-          Block facing with{" "}
-          <a href="#" className="text-blue-600 underline">
-            geo-synthetic
-          </a>{" "}
-          soil reinforcement.
+          Block facing with geo-synthetic soil reinforcement.
         </p>
         <ul className="list-disc pl-6 space-y-2">
           <li>

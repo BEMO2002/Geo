@@ -46,12 +46,9 @@ const SolutionThree = () => {
           Structures designed to hold back soil or other materials, preventing
           erosion and providing support for slopes or embankments. These walls
           are constructed using wire mesh or welded wire forms filled with soil
-          or other materials, often reinforced with{" "}
-          <a href="#" className="text-blue-600 underline">
-            geogrids
-          </a>
-          . They offer a cost-effective and versatile solution for both
-          temporary and permanent retaining wall applications.
+          or other materials, often reinforced with geogrids . They offer a
+          cost-effective and versatile solution for both temporary and permanent
+          retaining wall applications.
         </p>
         <p className="mb-5 leading-relaxed">
           Temporary and permanent wire-based retaining walls.

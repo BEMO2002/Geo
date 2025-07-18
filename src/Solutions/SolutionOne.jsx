@@ -28,30 +28,16 @@ const SolutionOne = () => {
           Strengthened Soil Walls are modern retaining systems designed to
           support earth masses in a wide range of civil, commercial, and
           infrastructure projects. These systems combine compacted granular
-          backfill with layers of high-tensile reinforcements—such as{" "}
-          <a href="#" className="text-blue-600 underline">
-            geogrids
-          </a>
-          , steel strips, or{" "}
-          <a href="#" className="text-blue-600 underline">
-            geotextiles
-          </a>
-          —to create a stable and durable structure that can withstand
-          significant vertical and lateral loads.
+          backfill with layers of high-tensile reinforcements—such as geogrids ,
+          steel strips, or geotextiles —to create a stable and durable structure
+          that can withstand significant vertical and lateral loads.
           <br />
           <br />
           These systems use layers of engineered backfill and high-strength
-          reinforcements (such as{" "}
-          <a href="#" className="text-blue-600 underline">
-            geogrids
-          </a>
-          ,{" "}
-          <a href="#" className="text-blue-600 underline">
-            Geostrips
-          </a>{" "}
-          or steel strips), combined with durable facing elements, to create
-          retaining structures capable of withstanding significant loads and
-          harsh environmental conditions.
+          reinforcements (such as geogrids , Geostrips or steel strips),
+          combined with durable facing elements, to create retaining structures
+          capable of withstanding significant loads and harsh environmental
+          conditions.
         </p>
         <b>Our MSE walls are ideal for:</b>
         <ul className="list-disc pl-6 space-y-2">
@@ -85,14 +71,8 @@ const SolutionOne = () => {
           challenges.
         </p>
         <p className="mb-5 leading-relaxed">
-          <a href="#" className="text-blue-600 underline">
-            Pre-cast
-          </a>{" "}
-          panel facing with galvanized steel or{" "}
-          <a href="#" className="text-blue-600 underline">
-            geo-synthetic
-          </a>{" "}
-          soil reinforcement.
+          Pre-cast panel facing with galvanized steel or geo-synthetic soil
+          reinforcement.
         </p>
         <ul className="list-disc pl-6 space-y-2">
           <li>
