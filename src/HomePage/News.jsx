@@ -1,41 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { MdOutlineKeyboardArrowRight, MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import {
+  MdOutlineKeyboardArrowRight,
+  MdOutlineKeyboardArrowLeft,
+} from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
-import new1 from "../assets/home/new1.webp";
-import new2 from "../assets/home/new2.webp";
-import new3 from "../assets/home/new3.webp";
-import new4 from "../assets/home/new4.webp";
-const newsItems = [
-  {
-    id: 1,
-    image: new1,
-    date: "2024-06-01T10:00:00Z",
-    title: "New Project Launch",
-    description: "A new project has been launched by the syndicate to improve services for members.",
-  },
-  {
-    id: 2,
-    image: new2,
-    date: "2024-05-28T14:30:00Z",
-    title: "Training Workshop",
-    description: "A training workshop was held on the latest techniques in biochemistry.",
-  },
-  {
-    id: 3,
-    image: new3,
-    date: "2024-05-20T09:00:00Z",
-    title: "Cooperation Agreement Signed",
-    description: "A cooperation agreement was signed with a leading company to enhance job opportunities for members.",
-  },
-  {
-    id: 4,
-    image: new4,
-    date: "2024-05-15T16:45:00Z",
-    title: "New Online Platform Launched",
-    description: "A new online platform was launched to facilitate communication between syndicate members and management.",
-  },
-];
 
 const formatDate = (date) => {
   const d = new Date(date);
@@ -47,7 +17,20 @@ const formatDate = (date) => {
 };
 
 const News = () => {
+  const [newsItems, setNewsItems] = useState([]);
+  const [loading, setLoading] = useState(true);
   const swiperRef = React.useRef(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setLoading(true);
+    fetch("https://geoduke.runasp.net/api/news")
+      .then((res) => res.json())
+      .then((data) => {
+        setNewsItems(data);
+        setLoading(false);
+      });
+  }, []);
 
   const goNext = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -61,13 +44,26 @@ const News = () => {
     }
   };
 
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh]">
+        <div className="w-16 h-16 border-4 border-[#0a4267] border-t-transparent rounded-full animate-spin mb-4"></div>
+        <span className="text-[#0a4267] text-lg font-semibold">
+          Loading news...
+        </span>
+      </div>
+    );
+  }
+
   return (
     <div className="px-4 sm:px-6 py-8 pt-20 relative">
       <div className="container mx-auto max-w-[1203px]">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-left text-[#0a4267]">GeoDuke News</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-left text-[#0a4267]">
+             News
+          </h2>
         </div>
-       
+
         <div className="relative">
           <Swiper
             ref={swiperRef}
@@ -81,19 +77,26 @@ const News = () => {
             className="mySwiper"
           >
             {newsItems.map((item) => (
-              <SwiperSlide key={item.id}>
+              <SwiperSlide key={item.slug}>
                 <div className="bg-white rounded-[24px] shadow-[0px_4px_4px_0px_#DBE8E3] h-[400px] flex flex-col mb-2 border border-[#0a4267]/10">
                   <img
-                    src={item.image}
+                    src={item.image?.url}
                     alt={item.title}
                     className="w-full h-48 object-cover rounded-t-[24px]"
                   />
                   <div className="p-4 text-left flex flex-col flex-grow">
-                    <p className="text-sm text-[#0a4267] mb-2 font-semibold">{formatDate(item.date)}</p>
-                    <h3 className="text-lg font-bold mb-2 leading-snug line-clamp-2 text-[#0a4267]">{item.title}</h3>
-                    <p className="text-sm text-gray-600 mb-4 leading-relaxed line-clamp-2">{item.description}</p>
+                    <p className="text-sm text-[#0a4267] mb-2 font-semibold">
+                      {formatDate(item.createdAt)}
+                    </p>
+                    <h3 className="text-lg font-bold mb-1 leading-snug line-clamp-2 text-[#0a4267]">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-[#0a4267] mb-2 font-medium line-clamp-2">
+                      {item.subTitle}
+                    </p>
                     <button
                       className="w-full bg-[#0a4267] text-white py-2 rounded-md hover:bg-white hover:text-[#0a4267] border border-[#0a4267] transition duration-300 mt-auto font-semibold"
+                      onClick={() => navigate(`/news/${item.slug}`)}
                     >
                       View Details
                     </button>
