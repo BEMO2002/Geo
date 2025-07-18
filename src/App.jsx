@@ -5,6 +5,7 @@ import Layout from './Layout';
 import HomePage from './HomePage';
 import WhoPage from './WhoPage/MainWho';
 import MainServices from './ServicesPage/MainServices';
+import MainSolution from './Solutions/MainSolution';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
       </Route>
       <Route path='/services' element={<Layout/>}>
         <Route index  element={<MainServices/>} />
+      </Route>
+      <Route path='/solutions' element={<Layout/>}>
+        <Route index  element={<MainSolution/>} />
       </Route>
     </Routes>
     </BrowserRouter>
