@@ -8,6 +8,7 @@ import image4 from "../assets/home/download (5).webp";
 import shape from "../assets/home/shape-1.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Framermotion/varient";
+import { Link } from "react-router-dom";
 const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -37,7 +38,7 @@ const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
 
   return (
     <div
-      className="relative  w-full h-[90vh] max-h-screen overflow-hidden pt-50 md:pt-20 z-20 "
+      className="relative  w-full h-[90vh] max-h-screen overflow-hidden pt-64 md:pt-20 z-20 "
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -96,11 +97,24 @@ const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
                       </h3>
                     )}
                     {item.description && (
-                      <p className="text-xl w-[350px] md:w-[500px] text-black mb-6 leading-10">
+                      <p className="md:text-xl text-lg w-[350px] md:w-[500px] text-black mb-6 leading-7 ">
                         {item.description}
                       </p>
                     )}
-                    {item.cta && (
+                    {item.cta && item.href ? (
+                      <Link
+                        to={item.href}
+                        className="relative inline-block my-4 md:px-12 px-6 md:py-6 py-3 text-center border-2 border-black 
+            text-lg tracking-wider text-black no-underline font-bold
+            cursor-pointer transition-all duration-500 ease-out
+            shadow-[inset_0_0_0_0_#000]
+            hover:text-white hover:shadow-[inset_0_-100px_0_0_#000]
+            active:scale-90"
+                      >
+                        {item.cta}
+                        <TfiArrowTopRight className="inline-block ml-2 text-xl" />
+                      </Link>
+                    ) : item.cta ? (
                       <button
                         className="relative inline-block my-4 md:px-12 px-6 md:py-6 py-3 text-center border-2 border-black 
             text-lg tracking-wider text-black no-underline font-bold
@@ -112,7 +126,7 @@ const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
                         {item.cta}
                         <TfiArrowTopRight className="inline-block ml-2 text-xl" />
                       </button>
-                    )}
+                    ) : null}
                   </motion.div>
                   <motion.div
                     variants={fadeIn("right", 0.2)}
@@ -162,10 +176,12 @@ const Slider = () => {
       id: 1,
       image: image1,
       paragraph: "Aviation",
-      title: "We're built on nearly 20 years of success in the wider Gulf region.",
+      title:
+        "We're built on nearly 20 years of success in the wider Gulf region.",
       description:
         " is a regional leader in engineered retaining wall systems, serving Saudi Arabia and the wider Gulf region. We provide innovative, durable, and cost-effective solutions using modern mechanical stabilization techniques and high-quality Retaining Walls, Precast Concrete Arches, Omega Walls, and Large Block Wall systems. We deliver smart, sustainable solutions tailored for the future of construction in Saudi Arabia and beyond.",
       cta: "Explore Now",
+      href: "/projects",
     },
     {
       id: 2,
@@ -175,6 +191,7 @@ const Slider = () => {
       description:
         "From Abu Dhabi's Etihad Towers to Manhattan's World Trade Center Reconstruction, HillInternational has helped our clients achieve their vision",
       cta: "View Projects",
+      href: "/projects",
     },
     {
       id: 3,
@@ -184,8 +201,8 @@ const Slider = () => {
       description:
         "Join us for the opportunity to work on the most exciting, world- changing projects of your career.",
       cta: "Explore Careers",
+      href: "/who",
     },
-
     {
       id: 4,
       image: image4,
@@ -195,6 +212,7 @@ const Slider = () => {
       description:
         "We have one definition of success: getting the best outcome for our client.",
       cta: "Explore Services",
+      href: "/services",
     },
   ];
 

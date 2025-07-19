@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutTwoImage from "../assets/who we are/About2.webp"
+import AboutTwoImage from "../assets/who we are/Picture1.png"
 const AboutTwo = () => {
   return (
     <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center lg:gap-20 gap-10 py-8 px-4 md:px-12 relative">

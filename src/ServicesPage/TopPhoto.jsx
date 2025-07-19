@@ -15,9 +15,9 @@ const TopPhoto = () => {
       </video>
 
 
-      <div className="absolute inset-0 bg-black/10 flex items-center">
-        <div className="container mx-auto mask-x-from-95% px-4 md:px-8 text-center text-white">
-          <span className="relative z-10 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
+      <div className="absolute inset-0 bg-black/10 flex items-center ">
+        <div className="container mx-auto  px-4 md:px-8 text-center mt-20 lg:mt-0 text-white">
+          <span className="relative uppercase z-10 text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
             What We Do
           </span>
         </div>

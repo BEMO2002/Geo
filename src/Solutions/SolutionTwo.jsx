@@ -33,10 +33,14 @@ const SolutionTwo = () => {
         <p className="mb-5 leading-relaxed ">
           Omega Block Walls are an advanced segmental retaining wall system
           engineered for both structural strength and aesthetic appeal. At{" "}
-          <b>GEODUKE</b>, we specialize in designing and constructing Omega
-          Block Walls for a wide range of applications—from roadway embankments
-          and bridge approaches to residential landscapes and commercial
-          developments.
+          <b>
+            {" "}
+            <span className="text-red-600 font-bold">GEO</span>
+            <span className="text-second font-bold">DUKE</span>
+          </b>
+          , we specialize in designing and constructing Omega Block Walls for a
+          wide range of applications—from roadway embankments and bridge
+          approaches to residential landscapes and commercial developments.
           <br />
           <br />
           The Omega Block system is built using interlocking precast concrete
@@ -82,12 +86,8 @@ const SolutionTwo = () => {
             <div>
               <b>Reinforced Stability</b>
               <br />
-              When combined with{" "}
-
-                geogrid
-
-              , Omega Blocks offer exceptional load-bearing capacity and
-              resistance to movement.
+              When combined with geogrid , Omega Blocks offer exceptional
+              load-bearing capacity and resistance to movement.
             </div>
           </li>
           <li className="flex items-start">
@@ -102,8 +102,13 @@ const SolutionTwo = () => {
         </ul>
         <p className="mb-5 leading-relaxed mt-4">
           With a commitment to <b>excellence, durability, and visual impact</b>,{" "}
-          <b>GEODUKE</b> is your trusted partner in delivering Omega Block Wall
-          systems that stand the test of time.
+          <b>
+            {" "}
+            <span className="text-red-600 font-bold">GEO</span>
+            <span className="text-second font-bold">DUKE</span>
+          </b>{" "}
+          is your trusted partner in delivering Omega Block Wall systems that
+          stand the test of time.
         </p>
         <p className="mb-5 leading-relaxed">
           Block facing with geo-synthetic soil reinforcement.

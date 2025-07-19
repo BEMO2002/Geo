@@ -10,6 +10,7 @@ import NewsDetails from "./NewsDetails";
 import Partnership from "./Partnership";
 import MainProject from "./projects/MainProject";
 import ProjectsDetails from "./ProjectsDetails";
+import MainContact from "./ContactPage/MainContact";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
         <Route path="/projects" element={<Layout />}>
           <Route index element={<MainProject />} />
           <Route path="/projects/:slug" element={<ProjectsDetails />} />
+        </Route>
+        <Route path="/contact" element={<Layout />}>
+          <Route index element={<MainContact />} />
         </Route>
         
       </Routes>

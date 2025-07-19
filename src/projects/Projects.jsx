@@ -70,14 +70,14 @@ const Projects = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-left text-base">
             Projects
           </h2>
-          <div className="flex flex-col sm:flex-row gap-2 items-center">
-            <div className="relative flex items-center w-80 max-w-full">
+          <div className="flex flex-row gap-2 items-center">
+            <div className="relative flex items-center  w-80 max-w-full">
               <input
                 type="text"
                 placeholder="Search by anything..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="border border-[#0a4267]/30 rounded-md px-3 py-2 focus:outline-none focus:border-[#0a4267] text-[#0a4267] w-full pr-20 "
+                className="border border-primary/50 rounded-md px-3 py-2 focus:outline-none  text-[#000] w-full pr-20 "
                 style={{ minWidth: "200px" }}
               />
               <button
@@ -91,7 +91,7 @@ const Projects = () => {
             <select
               value={pageSize}
               onChange={(e) => setPageSize(Number(e.target.value))}
-              className="border border-[#0a4267]/30 rounded-md px-3 py-2 focus:outline-none focus:border-[#0a4267] text-[#0a4267]"
+              className="border border-primary/50 rounded-md px-3 py-2 focus:outline-none  text-primary"
             >
               {[5, 10, 20, 50, 100].map((size) => (
                 <option key={size} value={size}>
@@ -112,14 +112,14 @@ const Projects = () => {
               return (
                 <div
                   key={item.id}
-                  className="flex flex-col-reverse md:flex-row bg-white md:rounded-[24px] shadow-[0px_4px_4px_0px_#DBE8E3] border border-[#0a4267]/10 overflow-hidden md:h-[400px] mb-4"
+                  className="flex flex-col-reverse md:flex-row bg-white md:rounded-[24px] rounded-lg shadow-[0px_4px_4px_0px_#DBE8E3] border border-[#0a4267]/10 overflow-hidden md:h-[400px] mb-4"
                 >
                   {/* النص */}
                   <div className="flex-1 flex flex-col justify-center items-start p-8 md:p-12 text-left h-full overflow-hidden">
                     <h3 className="text-2xl md:text-4xl font-extrabold mb-4 leading-tight text-[#222]">
                       {item.title}
                     </h3>
-                    <p className=" text-[#444444] mb-6 max-w-2xl ">
+                    <p className="text-[#444444] mb-6 max-w-2xl line-clamp-3 md:line-clamp-none">
                       {item.brief || item.description}
                     </p>
                     <button

@@ -22,7 +22,8 @@ const SolutionFive = () => {
           ground.
         </p>
         <p className="mb-2 leading-relaxed ">
-          <b>GEODUKE</b> offers cutting-edge GeoCell panel solutions that are
+          <b>          <span className="text-red-600 font-bold">GEO</span>
+          <span className="text-second font-bold">DUKE</span></b> offers cutting-edge GeoCell panel solutions that are
           made to enhance soil stabilization, erosion control, and load support.{" "}
           GeoCell panels—also known as cellular confinement systems—are
           three-dimensional, honeycomb-like structures made from high-density
