@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import mapImg from '../assets/home/map.png';
-import logo from "../assets/home/logo2.png"
+import logo from "../assets/home/Picture2.png"
 const Footer = () => {
   return (
     <footer className="bg-[#0a4267] border-t border-[#E5E7EB] mt-16">

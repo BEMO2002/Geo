@@ -42,9 +42,9 @@ const NewsDetails = () => {
     );
 
   return (
-    <div className="max-w-2xl mx-auto p-6 mt-10 bg-white rounded-xl shadow-md border border-[#0a4267]/10">
+    <div className="max-w-2xl mt-30  mx-auto p-6  bg-white rounded-xl shadow-md border border-[#0a4267]/10">
       <button
-        className="mb-4 font-bold text-[#0a4267] flex items-center gap-1"
+        className="mb-4 font-bold text-[#0a4267] flex items-center gap-1 "
         onClick={() => navigate(-1)}
       >
         <MdArrowBack size={22} />

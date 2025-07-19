@@ -22,7 +22,7 @@ const Recent = () => {
         />
         <div className="relative z-10 max-w-xl">
           <h1 className="text-3xl md:text-5xl font-semibold mb-6 mt-6">Recent Work</h1>
-          <p className="md:text-lg text-sm mb-8 leading-relaxed">
+          <p className="md:text-lg text-sm mb-8 leading-relaxed ">
             Explore our recent commercial and residential retaining wall projects, showcasing the latest innovations and exceptional craftsmanship. At ROSCH Company, we deliver superior solutions tailored to meet each client's unique needs. From versatile modular block walls to mortared limestone structures, our portfolio reflects our commitment to excellence in every detail.
           </p>
           <button

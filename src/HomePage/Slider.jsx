@@ -37,7 +37,7 @@ const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
 
   return (
     <div
-      className="relative  w-full h-[90vh] max-h-screen overflow-hidden pt-40 md:pt-20 z-20 "
+      className="relative  w-full h-[90vh] max-h-screen overflow-hidden pt-50 md:pt-20 z-20 "
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -162,9 +162,9 @@ const Slider = () => {
       id: 1,
       image: image1,
       paragraph: "Aviation",
-      title: "Delivering Success In Every Market",
+      title: "We're built on nearly 20 years of success in the wider Gulf region.",
       description:
-        " We enable our clients to achieve success in a multitude of industry sectors from major infrastructure programs to landmark buildings",
+        " is a regional leader in engineered retaining wall systems, serving Saudi Arabia and the wider Gulf region. We provide innovative, durable, and cost-effective solutions using modern mechanical stabilization techniques and high-quality Retaining Walls, Precast Concrete Arches, Omega Walls, and Large Block Wall systems. We deliver smart, sustainable solutions tailored for the future of construction in Saudi Arabia and beyond.",
       cta: "Explore Now",
     },
     {

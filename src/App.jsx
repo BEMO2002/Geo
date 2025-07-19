@@ -8,6 +8,8 @@ import MainServices from "./ServicesPage/MainServices";
 import MainSolution from "./Solutions/MainSolution";
 import NewsDetails from "./NewsDetails";
 import Partnership from "./Partnership";
+import MainProject from "./projects/MainProject";
+import ProjectsDetails from "./ProjectsDetails";
 
 function App() {
   return (
@@ -26,6 +28,10 @@ function App() {
         </Route>
         <Route path="/solutions" element={<Layout />}>
           <Route index element={<MainSolution />} />
+        </Route>
+        <Route path="/projects" element={<Layout />}>
+          <Route index element={<MainProject />} />
+          <Route path="/projects/:slug" element={<ProjectsDetails />} />
         </Route>
         
       </Routes>

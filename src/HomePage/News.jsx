@@ -6,7 +6,7 @@ import {
 } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import "swiper/css";
-
+import shape from "../assets/home/Picture3.png";
 const formatDate = (date) => {
   const d = new Date(date);
   return d.toLocaleDateString("en-US", {
@@ -57,9 +57,14 @@ const News = () => {
 
   return (
     <div className="px-4 sm:px-6 py-8 pt-20 relative">
+<img
+  src={shape}
+  alt=""
+  className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-[700px] hidden md:block"
+/>
       <div className="container mx-auto max-w-[1203px]">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-left text-[#0a4267]">
+          <h2 className="text-2xl md:text-3xl font-bold text-left text-base">
              News
           </h2>
         </div>
@@ -85,17 +90,17 @@ const News = () => {
                     className="w-full h-48 object-cover rounded-t-[24px]"
                   />
                   <div className="p-4 text-left flex flex-col flex-grow">
-                    <p className="text-sm text-[#0a4267] mb-2 font-semibold">
+                    <p className="text-sm text-[#444444] mb-2 font-semibold">
                       {formatDate(item.createdAt)}
                     </p>
-                    <h3 className="text-lg font-bold mb-1 leading-snug line-clamp-2 text-[#0a4267]">
+                    <h3 className="text-lg font-bold mb-1 leading-snug line-clamp-2 text-[#444444]">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-[#0a4267] mb-2 font-medium line-clamp-2">
+                    <p className="text-sm text-[#444444] mb-2 font-medium line-clamp-2">
                       {item.subTitle}
                     </p>
                     <button
-                      className="w-full bg-[#0a4267] text-white py-2 rounded-md hover:bg-white hover:text-[#0a4267] border border-[#0a4267] transition duration-300 mt-auto font-semibold"
+                      className="w-full bg-primary text-white py-2 rounded-md hover:bg-white hover:text-[#0000] border border-primary transition duration-300 mt-auto font-semibold"
                       onClick={() => navigate(`/news/${item.slug}`)}
                     >
                       View Details
@@ -109,13 +114,13 @@ const News = () => {
       </div>
       <div className="flex justify-center items-center mt-4 gap-2">
         <button
-          className="swiper-nav-btn text-[#0a4267] rounded-full border-2 border-[#0a4267] transition-all"
+          className="swiper-nav-btn text-primary rounded-full border-2 border-primary  transition-all"
           onClick={goPrev}
         >
           <MdOutlineKeyboardArrowRight size={28} />
         </button>
         <button
-          className="swiper-nav-btn text-[#0a4267] rounded-full border-2 border-[#0a4267] transition-all"
+          className="swiper-nav-btn text-primary rounded-full border-2 border-primary transition-all"
           onClick={goNext}
         >
           <MdOutlineKeyboardArrowLeft size={28} />
