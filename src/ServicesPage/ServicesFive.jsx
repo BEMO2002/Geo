@@ -5,7 +5,7 @@ const ServicesFive = () => {
     <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-center lg:gap-20 gap-10 py-8 px-4 md:px-12">
       {/* Right Side: Text */}
       <div className="flex-1  text-base md:text-lg font-normal">
-        <h2 className="font-bold text-2xl md:text-3xl text-black mb-4">
+        <h2 className="font-bold text-2xl md:text-3xl uppercase text-black mb-4">
           Inspection, Maintenance & Rehabilitation
         </h2>
         <p className="mb-5 leading-relaxed ">

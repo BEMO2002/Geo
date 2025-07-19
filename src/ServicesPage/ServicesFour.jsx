@@ -13,7 +13,7 @@ const ServicesFour = () => {
       </div>
       {/* Right Side: Text */}
       <div className="flex-1  text-base md:text-lg font-normal">
-        <h2 className="font-bold text-2xl md:text-3xl text-black mb-4">
+        <h2 className="font-bold text-2xl md:text-3xl uppercase text-black mb-4">
           {" "}
           Quality Control & Testing
         </h2>

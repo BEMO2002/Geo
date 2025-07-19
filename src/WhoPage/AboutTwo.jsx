@@ -12,7 +12,7 @@ const AboutTwo = () => {
 
         <h2 className="font-bold text-2xl md:text-3xl text-black mb-4">ABOUT US</h2>
         <p className="mb-5 leading-relaxed ">
-          For more than 15 years, <span className="text-red-600 font-bold">GEO</span><span className="text-second font-bold">DUKE</span> Company has specialized in both Construction and infrastructure work with high efficiency and speed throughout the Kingdom of Saudi Arabia and the Gulf region.
+          For more than 20 years, <span className="text-red-600 font-bold">GEO</span><span className="text-second font-bold">DUKE</span> Company has specialized in both Construction and infrastructure work with high efficiency and speed throughout the Kingdom of Saudi Arabia and the Gulf region.
         </p>
         <p className="leading-relaxed ">
           <span className="text-red-600 font-bold">GEO</span><span className="text-second font-bold">DUKE</span> Company specializes in <span className="font-medium">infrastructure, construction, and concrete works</span>, and has implemented many projects throughout the Kingdom of Saudi Arabia, as the company has a specialized team of engineers, technicians, and specialists in infrastructure and the implementation of various construction works, such as <span className="font-medium">ready-mix concrete</span>, bridges, tunnels, strategic tanks, and others.

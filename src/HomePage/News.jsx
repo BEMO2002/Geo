@@ -100,7 +100,7 @@ const News = () => {
                       {item.subTitle}
                     </p>
                     <button
-                      className="w-full bg-primary text-white py-2 rounded-md hover:bg-white hover:text-[#0000] border border-primary transition duration-300 mt-auto font-semibold"
+                      className="w-full bg-second text-white py-2 rounded-md hover:bg-white hover:text-[#000] border border-second transition duration-300 mt-auto font-semibold"
                       onClick={() => navigate(`/news/${item.slug}`)}
                     >
                       View Details
@@ -114,13 +114,13 @@ const News = () => {
       </div>
       <div className="flex justify-center items-center mt-4 gap-2">
         <button
-          className="swiper-nav-btn text-primary rounded-full border-2 border-primary  transition-all"
+          className="swiper-nav-btn text-second rounded-full border-2 border-second  transition-all"
           onClick={goPrev}
         >
           <MdOutlineKeyboardArrowRight size={28} />
         </button>
         <button
-          className="swiper-nav-btn text-primary rounded-full border-2 border-primary transition-all"
+          className="swiper-nav-btn text-second rounded-full border-2 border-second transition-all"
           onClick={goNext}
         >
           <MdOutlineKeyboardArrowLeft size={28} />

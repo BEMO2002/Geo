@@ -9,7 +9,7 @@ const ServicesTwo = () => {
       </div>
       {/* Right Side: Text */}
       <div className="flex-1  text-base md:text-lg font-normal">
-        <h2 className="font-bold text-2xl md:text-3xl text-black mb-4"> Supply & Installation
+        <h2 className="font-bold text-2xl md:text-3xl uppercase text-black mb-4"> Supply & Installation
         </h2>
         <p className="mb-5 leading-relaxed ">
         From geosynthetic reinforcements to facing panels, we supply all necessary materials and provide complete installation services. Our crews are trained and certified to deliver safe, timely, and precise wall construction, including precast concrete facing panels, soil reinforcements, and attachment devices. 

@@ -3,7 +3,7 @@ import popupImage from "./assets/home/logo.png";
 
 const Partnership = () => {
   return (
-    <div className="max-w-5xl mx-auto p-4">
+    <div className="max-w-5xl mx-auto p- mt-40">
       <img src={popupImage} alt="Partnership" className="w-40 mx-auto mb-6" />
       <div className="max-w-none text-gray-900 text-lg leading-relaxed md:font-[500] font-[400]">
         <h2 className="md:text-2xl text-xl font-bold mb-6 text-center">

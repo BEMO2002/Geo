@@ -7,7 +7,7 @@ const ServicesOen = () => {
 
       {/* Right Side: Text */}
       <div className="flex-1  text-base md:text-lg font-normal">
-        <h2 className="font-bold text-2xl md:text-3xl text-black mb-4">Design & Engineering
+        <h2 className="font-bold text-2xl md:text-3xl uppercase text-black mb-4">Design & Engineering
         </h2>
         <p className="mb-5 leading-relaxed ">
         We offer full-service design and structural engineering for MSE walls, ensuring stability, durability, and cost-efficiency. Our expert team uses advanced software and industry best practices to meet all project specifications and regulatory standards. This includes calculating the friction angle of the select backfill and determining reinforcement lengths based on wall height and loading conditions.

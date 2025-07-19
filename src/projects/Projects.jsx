@@ -67,7 +67,7 @@ const Projects = () => {
     <div className="px-4 sm:px-6 py-8 pt-20 relative">
       <div className="container mx-auto max-w-[1703px]">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-left text-base">
+          <h2 className="text-2xl md:text-3xl uppercase font-bold text-left text-base">
             Projects
           </h2>
           <div className="flex flex-row gap-2 items-center">
@@ -91,7 +91,7 @@ const Projects = () => {
             <select
               value={pageSize}
               onChange={(e) => setPageSize(Number(e.target.value))}
-              className="border border-primary/50 rounded-md px-3 py-2 focus:outline-none  text-primary"
+              className="border border-primary/50 rounded-md px-3 py-2 focus:outline-none  text-base"
             >
               {[5, 10, 20, 50, 100].map((size) => (
                 <option key={size} value={size}>
