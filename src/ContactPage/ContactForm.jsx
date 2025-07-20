@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-
 const initialState = {
   Name: "",
   Email: "",
@@ -57,9 +56,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md mt-10  mb-10">
+    <div className="max-w-2xl  mx-auto p-6 bg-white rounded-lg shadow-md mt-10  mb-10">
       <ToastContainer position="top-center" />
-      <h2 className="text-2xl font-bold mb-6 text-center text-primary">
+      <h2 className="text-2xl font-bold uppercase mb-6 text-center text-primary">
         Contact Us
       </h2>
       <form onSubmit={handleSubmit} noValidate>

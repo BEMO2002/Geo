@@ -38,7 +38,7 @@ const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
 
   return (
     <div
-      className="relative  w-full h-[90vh] max-h-screen overflow-hidden pt-64 md:pt-20 z-20 "
+      className="relative  w-full h-[90vh] max-h-screen overflow-hidden mt-20 md:mt-0   z-20 "
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

@@ -3,7 +3,7 @@ import logo from "../assets/home/Picture2.png";
 import videoShow from "../assets/home/video.mp4";
 const Video = () => {
   return (
-    <div className="relative w-screen h-[350px] sm:h-[400px] md:h-[500px] lg:h-[650px] xl:h-[800px] overflow-hidden">
+    <div className="relative w-screen h-[350px] sm:h-[400px] md:h-[500px] lg:h-[650px] xl:h-[870px] overflow-hidden">
       {/* Video Background */}
       <video
         className="w-full h-full object-cover"

@@ -36,14 +36,14 @@ const Numbers = () => {
     <section className="py-[60px] px-4 sm:px-6 lg:px-8 relative">
       <div className="container mx-auto">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* الصف الأول */}
-            <CounterBox end={20} label="YEARS OF INNOVATION" />
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
             <CounterBox
               custom="(SR 962+ million)"
               label="LAST 5 YEARS' REVENUES"
             />
             <CounterBox end={2000} label="CRAFT & STAFF EMPLOYEES" />
+            {/* الصف الأول */}
+            <CounterBox end={20} label="YEARS OF INNOVATION" />
             <CounterBox end={100} label="PROJECTS" />
             <CounterBox end={30} label="LOCATIONS" />
             {/* الصف الثاني */}

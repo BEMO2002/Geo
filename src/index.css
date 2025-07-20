@@ -10,6 +10,7 @@
 html, body {
     overflow-x: hidden;
     font-family: "Roboto Condensed", sans-serif;
+    scroll-behavior: smooth;
 }
 
 @theme {
@@ -17,4 +18,21 @@ html, body {
     --color-baseTwo: #9E9E9E;
     --color-primary: #aa0000;
     --color-second: #0a4267;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #0a4267;
+    border-radius: 10px;
 }

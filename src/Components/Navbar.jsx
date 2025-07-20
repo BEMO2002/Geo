@@ -59,7 +59,7 @@ const Navbar = () => {
           <div className="hidden lg:flex">
             <Link
               to="/contact"
-              className="relative w-full md:w-[347px] h-[48px] inline-flex items-center justify-center gap-2 px-[16px] py-[8px] font-[700] border  text-[16px] leading-[26px] rounded-[8px] text-white hover:text-primary hover:border-1 bg-primary hover:bg-[#fff] focus:outline-none transition-colors duration-300 uppercase"
+              className="relative w-full md:w-[347px] h-[48px] inline-flex items-center justify-center gap-2 px-[16px] py-[8px] font-[700] border  text-[16px] leading-[26px] rounded-[5px] text-white hover:text-primary hover:border-1 bg-primary hover:bg-[#fff] focus:outline-none transition-colors duration-300 uppercase"
             >
               <GoRocket size={24} />
               Lets Grow Your business

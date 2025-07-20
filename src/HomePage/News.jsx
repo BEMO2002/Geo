@@ -57,15 +57,15 @@ const News = () => {
 
   return (
     <div className="px-4 sm:px-6 py-8 pt-20 relative">
-<img
-  src={shape}
-  alt=""
-  className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-[700px] hidden md:block"
-/>
+      <img
+        src={shape}
+        alt=""
+        className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-[700px] hidden md:block"
+      />
       <div className="container mx-auto max-w-[1203px]">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold text-left text-base">
-             News
+            News
           </h2>
         </div>
 
@@ -100,7 +100,7 @@ const News = () => {
                       {item.subTitle}
                     </p>
                     <button
-                      className="w-full bg-second text-white py-2 rounded-md hover:bg-white hover:text-[#000] border border-second transition duration-300 mt-auto font-semibold"
+                      className="w-full bg-second text-white py-2 rounded-[5px] hover:bg-white hover:text-[#000] border border-second transition duration-300 mt-auto font-semibold"
                       onClick={() => navigate(`/news/${item.slug}`)}
                     >
                       View Details
