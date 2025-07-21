@@ -16,30 +16,26 @@ const countries = [
   {
     name: "Oman",
     center: { lat: 23.5859, lng: 58.4059 },
-    email: "info@oman.com",
-    address: "Muscat, Oman",
-    phone: "+968 1234 5678",
+    email: "OMAN@geoduke.com",
+    address: "1263 Way, Seeb, Oman",
   },
   {
     name: "UAE",
     center: { lat: 24.4539, lng: 54.3773 },
-    email: "info@uae.com",
-    address: "Abu Dhabi, UAE",
-    phone: "+971 1234 5678",
+    email: "UAE@geoduke.com",
+    address: "Al Sufouh 2 – Dubai, United Arab Emirates",
   },
   {
     name: "Saudi Arabia",
     center: { lat: 24.7136, lng: 46.6753 },
-    email: "info@saudi.com",
+    email: "KSA@geoduke.com",
     address: "Riyadh, Saudi Arabia",
-    phone: "+966 1234 5678",
   },
   {
     name: "USA",
     center: { lat: 38.8833, lng: -77.0167 },
-    email: "info@usa.com",
-    address: "Washington, USA",
-    phone: "+1 123-456-7890",
+    email: "USA@geoduke.com",
+    address: "Bartonville, Texas, US",
   },
 ];
 
@@ -87,15 +83,12 @@ const Map = () => {
             onCloseClick={() => setSelected(null)}
           >
             <div>
-              <h3>{selected.name}</h3>
+              <h3 className="font-bold mb-2">{selected.name}</h3>
               <p>
                 <b>Address:</b> {selected.address}
               </p>
               <p>
                 <b>Email:</b> {selected.email}
-              </p>
-              <p>
-                <b>Phone:</b> {selected.phone}
               </p>
             </div>
           </InfoWindow>

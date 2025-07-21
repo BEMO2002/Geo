@@ -41,9 +41,9 @@ const Numbers = () => {
               custom="(SR 962+ million)"
               label="LAST 5 YEARS' REVENUES"
             />
+            <CounterBox end={20} label="YEARS OF INNOVATION" />
             <CounterBox end={2000} label="CRAFT & STAFF EMPLOYEES" />
             {/* الصف الأول */}
-            <CounterBox end={20} label="YEARS OF INNOVATION" />
             <CounterBox end={100} label="PROJECTS" />
             <CounterBox end={30} label="LOCATIONS" />
             {/* الصف الثاني */}
