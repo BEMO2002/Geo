@@ -12,11 +12,16 @@ const Footer = () => {
             <img src={logo} alt="" className="w-70 rounded-lg mb-3" />
           </Link>
           <div className="text-white text-center md:text-left text-[14px] mt-2 leading-relaxed">
-            <div className="font-bold mb-1">Our Office</div>
+            <div className="font-bold mb-1">Head Offices Saudi Arabia</div>
             <div>
-              123 Main Street, Suite 400
+              Riyadh
               <br />
-              New York, NY 10001, USA
+              18 Floor, Burj Tamkeen, Olaya St., Riyadh
+            </div>
+            <div className="mt-2">
+              Medinah
+              <br />
+              7116 Prince Abdul Majeed Rd, Al Dhahirah Dist., Medina
             </div>
             <div className="mt-2">
               Delivering innovative, sustainable solutions for modern cities and
@@ -66,19 +71,20 @@ const Footer = () => {
             <div>
               Email:{" "}
               <a
-                href="mailto:info@geoduke.com"
+                href="mailto: info@geoduke.com 
+"
                 className="hover:text-[#E30613] transition-colors"
               >
                 info@geoduke.com
               </a>
             </div>
             <div>
-              Phone:{" "}
+              Website:{" "}
               <a
-                href="tel:+1234567890"
+                href="www.geoduke.com "
                 className="hover:text-[#E30613] transition-colors"
               >
-                +1 234 567 890
+                www.geoduke.com
               </a>
             </div>
           </div>

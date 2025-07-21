@@ -11,10 +11,13 @@ import Partnership from "./Partnership";
 import MainProject from "./projects/MainProject";
 import ProjectsDetails from "./ProjectsDetails";
 import MainContact from "./ContactPage/MainContact";
+import ScrollToTop from "./ScrollToTop";
+import SolutionDetails from "./SolutionDetails";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -29,6 +32,7 @@ function App() {
         </Route>
         <Route path="/solutions" element={<Layout />}>
           <Route index element={<MainSolution />} />
+          <Route path="/solutions/:slug" element={<SolutionDetails/>}/>
         </Route>
         <Route path="/projects" element={<Layout />}>
           <Route index element={<MainProject />} />
@@ -37,7 +41,6 @@ function App() {
         <Route path="/contact" element={<Layout />}>
           <Route index element={<MainContact />} />
         </Route>
-        
       </Routes>
     </BrowserRouter>
   );
