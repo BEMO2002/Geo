@@ -66,7 +66,10 @@ const NewsDetails = () => {
       <h2 className="text-lg font-semibold text-[#0a4267] mb-2">
         {news.subTitle}
       </h2>
-      <p className="text-base  leading-relaxed">{news.description}</p>
+      <div
+  className="text-base leading-relaxed"
+  dangerouslySetInnerHTML={{ __html: news.description }}
+/>
     </div>
   );
 };

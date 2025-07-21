@@ -47,7 +47,7 @@ const ProjectsDetails = () => {
   const otherImages = project.images?.filter((img) => !img.isMain);
 
   return (
-    <div className="max-w-[1400px] mx-auto p-4 md:p-8 mt-10 bg-white rounded-[24px] shadow-lg border border-[#0a4267]/10 flex flex-col md:flex-row gap-8 items-stretch pt-20">
+    <div className="max-w-[1400px] mx-auto p-4 md:p-8 mt-22 bg-white rounded-[24px] shadow-lg border border-[#0a4267]/10 flex flex-col md:flex-row gap-8 items-stretch pt-20">
       {/* الصور */}
       <div className="md:w-[45%] w-full flex flex-col gap-4 justify-center">
         {/* الصورة الرئيسية */}
@@ -75,7 +75,7 @@ const ProjectsDetails = () => {
         )}
       </div>
       {/* النصوص */}
-      <div className="flex-1 flex flex-col justify-center items-start p-2 md:p-6 text-left h-full overflow-hidden">
+      <div className="flex-1 flex flex-col justify-center items-start p-2 md:p-10 shadow text-left h-full overflow-hidden">
         <button
           className="mb-6 font-bold text-[#0a4267] flex items-center gap-1 hover:underline"
           onClick={() => navigate(-1)}
@@ -96,14 +96,16 @@ const ProjectsDetails = () => {
         <h2 className="text-lg font-semibold text-[#0a4267] mb-2">
           {project.client}
         </h2>
-        <p className="text-base text-[#444444] mb-2 font-medium">
+        <p className=" text-[#444444] mb-2 font-medium">
           Value: {project.value}
         </p>
-        <p className="text-base text-[#444444] mb-4 font-medium">
+        <p className="text-[#444444] mb-4 font-medium">
           {project.brief}
         </p>
-        <div className="whitespace-pre-line text-base leading-relaxed mb-4 text-[#444] max-h-[180px] overflow-auto pr-2">
-          {project.description}
+        <div
+        dangerouslySetInnerHTML={{ __html: project.description }}
+        className="whitespace-pre-line  leading-relaxed mb-4 text-[#444] max-h-[180px] overflow-auto pr-2">
+          
         </div>
       </div>
       {/* Popup for image viewing */}
