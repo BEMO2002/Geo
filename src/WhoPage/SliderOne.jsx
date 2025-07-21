@@ -5,22 +5,20 @@ import 'swiper/css'
 import 'swiper/css/autoplay'
 import saudi from "../assets/who we are/sar.jpg"
 const images = [
-  '/Saudi Arabia/Picture1.png',
-  '/Saudi Arabia/Picture2.png',
-  '/Saudi Arabia/Picture3.png',
-  '/Saudi Arabia/Picture4.png',
-  '/Saudi Arabia/Picture6.png',
-  '/Saudi Arabia/Picture7.png',
-  '/Saudi Arabia/Picture8.png',
-  '/Saudi Arabia/Picture9.png',
-  '/Saudi Arabia/Picture10.png',
-  '/Saudi Arabia/Picture11.png',
-  '/Saudi Arabia/Picture12.png',
-  '/Saudi Arabia/Picture13.png',
-  '/Saudi Arabia/Picture14.png',
-  '/Saudi Arabia/Picture15.png',
-  '/Saudi Arabia/Picture16.png',
-  '/Saudi Arabia/Picture17.png',
+  '/Saudi Arabia/saudia (1).png ',
+  '/Saudi Arabia/saudia (2).png',
+  '/Saudi Arabia/saudia (3).png',
+  '/Saudi Arabia/saudia (4).png',
+  '/Saudi Arabia/saudia (5).png',
+  '/Saudi Arabia/saudia (6).png',
+  '/Saudi Arabia/saudia (7).png',
+  '/Saudi Arabia/saudia (8).png',
+  '/Saudi Arabia/saudia (9).png',
+  '/Saudi Arabia/saudia (10).png',
+  '/Saudi Arabia/saudia (11).png',
+  '/Saudi Arabia/saudia (12).png',
+  '/Saudi Arabia/saudia (13).png',
+  '/Saudi Arabia/saudia (14).png',
 ]
 
 const SliderOne = () => {
@@ -54,7 +52,7 @@ const SliderOne = () => {
               <img 
                 src={img} 
                 alt={`Saudi Arabia ${idx + 1}`} 
-                className=" object-contain w-40 bg-white"
+                className=" object-contain  bg-white"
                 style={{ display: 'block' }}
               />
             </div>

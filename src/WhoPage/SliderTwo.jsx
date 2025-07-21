@@ -5,10 +5,10 @@ import 'swiper/css'
 import 'swiper/css/autoplay'
 import us from "../assets/who we are/usd.jpg"
 const images = [
-    '/us/Picture18.png',
-    '/us/Picture19.png',
-    '/us/Picture20.png',
-    '/us/Picture21.png',
+    '/us/us (1).png',
+    '/us/us (2).png',
+    '/us/us (3).png',
+    '/us/us (4).png',
   ]
 const SliderTwo = () => {
     return (
@@ -42,7 +42,7 @@ const SliderTwo = () => {
                   <img 
                     src={img} 
                     alt={`Saudi Arabia ${idx + 1}`} 
-                    className=" object-contain w-40 bg-white"
+                    className=" object-contain  bg-white"
                     style={{ display: 'block' }}
                   />
                 </div>
