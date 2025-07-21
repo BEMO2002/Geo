@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/home/Picture1.png";
+import logo from "../assets/home/Screenshot 2025-07-21 221411.png";
 import { GoRocket } from "react-icons/go";
 import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {

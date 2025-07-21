@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { TfiArrowTopRight } from "react-icons/tfi";
-import image1 from "../assets/home/img-split-panel-recent-work-01-960x750.jpg";
-import image2 from "../assets/home/download (3).webp";
-import image3 from "../assets/home/download (4).webp";
-import image4 from "../assets/home/download (5).webp";
+import image1 from "../assets/home/whygeo.png";
+import image2 from "../assets/home/Project.png";
+import image3 from "../assets/home/Picture1.png";
+import image4 from "../assets/home/serv.png";
 import shape from "../assets/home/shape-1.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Framermotion/varient";
@@ -87,17 +87,17 @@ const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
                       </button>
                     </div>
                     {item.paragraph && (
-                      <h2 className="text-4xl md:text-7xl font-semibold mb-4 text-black leading-tight">
+                      <h2 className="text-3xl md:text-6xl font-semibold mb-4 text-black leading-tight">
                         {item.paragraph}
                       </h2>
                     )}
                     {item.title && (
-                      <h3 className="text-2xl md:text-5xl mb-2 text-primary">
+                      <h3 className="text-xl md:text-4xl mb-2 text-primary">
                         {item.title}
                       </h3>
                     )}
                     {item.description && (
-                      <p className="md:text-xl text-lg w-[350px] md:w-[500px] text-black mb-6 leading-7 ">
+                      <p className="md:text-xl text-md w-[370px] md:w-[500px] text-black mb-6 leading-7 ">
                         {item.description}
                       </p>
                     )}
@@ -175,21 +175,21 @@ const Slider = () => {
     {
       id: 1,
       image: image1,
-      paragraph: "Aviation",
+      paragraph: "WHY GEODUKE?",
       title:
         "We're built on nearly 20 years of success in the wider Gulf region.",
       description:
-        " is a regional leader in engineered retaining wall systems, serving Saudi Arabia and the wider Gulf region. We provide innovative, durable, and cost-effective solutions using modern mechanical stabilization techniques and high-quality Retaining Walls, Precast Concrete Arches, Omega Walls, and Large Block Wall systems. We deliver smart, sustainable solutions tailored for the future of construction in Saudi Arabia and beyond.",
+        "GEODUKE  is a regional leader in engineered retaining wall systems, serving Saudi Arabia and the wider Gulf region. We provide innovative, durable, and cost-effective solutions using modern mechanical stabilization techniques and high-quality Retaining Walls, Precast Concrete Arches, Omega Walls, and Large Block Wall systems. We deliver smart, sustainable solutions tailored for the future of construction in Saudi Arabia and beyond.",
       cta: "Explore Now",
       href: "/projects",
     },
     {
       id: 2,
       image: image2,
-      paragraph: "PROJECTS",
-      title: "MANAGING PROJECTS ACROSS THE WORLD",
+      paragraph: "PROJECT MANAGEMENT",
+      title: "Let’s lay the foundation for the future. ",
       description:
-        "From Abu Dhabi's Etihad Towers to Manhattan's World Trade Center Reconstruction, HillInternational has helped our clients achieve their vision",
+        "GEODUKE support project management team enables clients to focus on their core business, with the assurance that their project goals will be successfully taken care. We ensure that a qualified and dedicated team of professionals is assembled to suit the specific project needs. We then provide a focal point for the client, ensuring clear communication, overall quality control, and simplified project administration.",
       cta: "View Projects",
       href: "/projects",
     },
@@ -197,20 +197,19 @@ const Slider = () => {
       id: 3,
       image: image3,
       paragraph: "CAREERS",
-      title: "TAKE YOUR CAREER HIGHER WITH HILL",
+      title: "Build the future with GEODUKE ",
       description:
-        "Join us for the opportunity to work on the most exciting, world- changing projects of your career.",
+        "Join GEODUKE and be part of shaping the future through transformative infrastructure and construction projects that make a lasting impact.",
       cta: "Explore Careers",
       href: "/who",
     },
     {
       id: 4,
       image: image4,
-      paragraph: "SERVICES",
-      title:
-        "THE FIRST CHOICE FOR GLOBAL PROGRAM, PROJECT, AND CONSTRUCTION MANAGEMENT",
+      paragraph: "MSE WALL SOLUTIONS",
+      title: "From concept to completion, we deliver strength and reliability.",
       description:
-        "We have one definition of success: getting the best outcome for our client.",
+        "GEODUKE specializes in the supply, design, and installation of Mechanically Stabilized Earth (MSE) walls, offering end-to-end solutions for our projects. ",
       cta: "Explore Services",
       href: "/services",
     },
