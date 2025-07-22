@@ -6,7 +6,7 @@ import image2 from "../assets/home/Project.png";
 import image3 from "../assets/home/Picture1.png";
 import image4 from "../assets/home/serv.png";
 import shape from "../assets/home/shape-1.png";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { fadeIn } from "../Framermotion/varient";
 import { Link } from "react-router-dom";
 const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
@@ -38,12 +38,12 @@ const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
 
   return (
     <div
-      className="relative  w-full h-[90vh] max-h-screen overflow-hidden mt-20 md:mt-0   z-20 "
-      onMouseEnter={() => setIsPaused(true)}
+      className="relative w-full h-[90vh] max-h-screen overflow-hidden  md:mt-0 z-20 "
+      onMouseEnteroverflow-hidden={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       {/* Slides */}
-      <div className="relative w-full  h-full transition-transform duration-700 ease-in-out">
+      <div className="relative w-full h-full transition-transform duration-700 ease-in-out">
         {items.map((item, index) => (
           <div
             key={item.id || index}
@@ -58,91 +58,83 @@ const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
               alt=""
               className="absolute -top-20 left-0 inset-0 opacity-30 rotate-180 hidden md:block"
             />
-            <div className="container mx-auto  px-4 py-12">
-              <div className="w-full max-w-[1500px] mx-auto px-4 py-12">
-                <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="container mx-auto px-2 md:px-4 py-6 md:py-12">
+              <div className="w-full max-w-[1500px] mx-auto px-2 md:px-4 py-6 md:py-12">
+                <div className="flex flex-col lg:flex-row items-center gap-4 md:gap-8 lg:gap-12">
                   {/* Text Section */}
-                  <motion.div
+                  <div
                     variants={fadeIn("down", 0.2)}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: false, amount: 0 }}
-                    className="max-w-full lg:w-1/2 z-50"
+                    className="max-w-full lg:w-1/2 z-50 relative"
                   >
                     {/* الأسهم فوق التيكست */}
-                    <div className="flex flex-row gap-2 items-center mb-4">
+                    <div className="absolute top-0 left-0 flex flex-row gap-2 items-center z-10">
                       <button
                         onClick={goToPrev}
-                        className="p-3 shadow-lg bg-white text-black hover:bg-black hover:text-white transition duration-300"
+                        className="p-2 md:p-3 shadow-lg bg-white text-black hover:bg-black hover:text-white transition duration-300"
                         aria-label="Previous slide"
                       >
-                        <FiChevronLeft className="w-6 h-6" />
+                        <FiChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
                       </button>
                       <button
                         onClick={goToNext}
-                        className="p-3 shadow-lg bg-white text-black hover:bg-black hover:text-white transition duration-300"
+                        className="p-2 md:p-3 shadow-lg bg-white text-black hover:bg-black hover:text-white transition duration-300"
                         aria-label="Next slide"
                       >
-                        <FiChevronRight className="w-6 h-6" />
+                        <FiChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                       </button>
                     </div>
-                    {item.paragraph && (
-                      <h2 className="text-3xl md:text-6xl font-semibold mb-4 text-black leading-tight">
-                        {item.paragraph}
-                      </h2>
-                    )}
-                    {item.title && (
-                      <h3 className="text-xl md:text-4xl mb-2 text-primary">
-                        {item.title}
-                      </h3>
-                    )}
-                    {item.description && (
-                      <p className="md:text-xl text-md w-[370px] md:w-[500px] text-black mb-6 leading-7 ">
-                        {item.description}
-                      </p>
-                    )}
-                    {item.cta && item.href ? (
-                      <Link
-                        to={item.href}
-                        className="relative inline-block my-4 md:px-12 px-6 md:py-6 py-3 text-center border-2 border-black 
-            text-lg tracking-wider text-black no-underline font-bold
-            cursor-pointer transition-all duration-500 ease-out
-            shadow-[inset_0_0_0_0_#000]
-            hover:text-white hover:shadow-[inset_0_-100px_0_0_#000]
-            active:scale-90"
-                      >
-                        {item.cta}
-                        <TfiArrowTopRight className="inline-block ml-2 text-xl" />
-                      </Link>
-                    ) : item.cta ? (
-                      <button
-                        className="relative inline-block my-4 md:px-12 px-6 md:py-6 py-3 text-center border-2 border-black 
-            text-lg tracking-wider text-black no-underline font-bold
-            cursor-pointer transition-all duration-500 ease-out
-            shadow-[inset_0_0_0_0_#000]
-            hover:text-white hover:shadow-[inset_0_-100px_0_0_#000]
-            active:scale-90"
-                      >
-                        {item.cta}
-                        <TfiArrowTopRight className="inline-block ml-2 text-xl" />
-                      </button>
-                    ) : null}
-                  </motion.div>
-                  <motion.div
+                    <div className="pt-12 md:pt-14">
+                      {" "}
+                      {/* Add padding to avoid overlap with arrows */}
+                      {item.paragraph && (
+                        <h2 className="text-xl md:text-3xl lg:text-6xl font-semibold mb-2 md:mb-4 text-black leading-tight break-words">
+                          {item.paragraph}
+                        </h2>
+                      )}
+                      {item.title && (
+                        <h3 className="md:text-xl lg:text-4xl mb-1 md:mb-2 text-primary break-words">
+                          {item.title}
+                        </h3>
+                      )}
+                      {item.description && (
+                        <p className="text-sm md:text-xl w-full max-w-xs md:max-w-md text-black mb-4 md:mb-6 leading-6 md:leading-7 break-words">
+                          {item.description}
+                        </p>
+                      )}
+                      {item.cta && item.href ? (
+                        <Link
+                          to={item.href}
+                          className="relative inline-block my-2 md:my-4 md:px-12 px-4 md:py-6 py-2 text-center border-2 border-black text-sm md:text-lg tracking-wider text-black no-underline font-bold cursor-pointer transition-all duration-500 ease-out shadow-[inset_0_0_0_0_#000] hover:text-white hover:shadow-[inset_0_-100px_0_0_#000] active:scale-90"
+                        >
+                          {item.cta}
+                          <TfiArrowTopRight className="inline-block ml-2 text-lg md:text-xl" />
+                        </Link>
+                      ) : item.cta ? (
+                        <button className="relative inline-block my-2 md:my-4 md:px-12 px-4 md:py-6 py-2 text-center border-2 border-black text-sm md:text-lg tracking-wider text-black no-underline font-bold cursor-pointer transition-all duration-500 ease-out shadow-[inset_0_0_0_0_#000] hover:text-white hover:shadow-[inset_0_-100px_0_0_#000] active:scale-90">
+                          {item.cta}
+                          <TfiArrowTopRight className="inline-block ml-2 text-lg md:text-xl" />
+                        </button>
+                      ) : null}
+                    </div>
+                  </div>
+                  <div
                     variants={fadeIn("right", 0.2)}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: false, amount: 0 }}
-                    className="max-w-full lg:w-1/2 relative"
+                    className="max-w-full lg:w-1/2 relative mt-4 md:mt-0"
                   >
-                    <div className="relative w-full h-[400px] flex items-center justify-center">
+                    <div className="relative w-[80vw] max-w-xs h-[80vw] max-h-xs md:w-full md:h-[400px] flex items-center justify-center mx-auto">
                       <img
                         src={item.image}
                         alt={item.alt || `Slide ${index + 1}`}
                         className="w-full h-full object-cover rounded-xl relative z-10"
                       />
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -151,14 +143,14 @@ const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
       </div>
 
       {/* Indicators */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2 z-20">
+      <div className="absolute bottom-4 md:bottom-8 left-0 right-0 flex justify-center gap-2 z-20">
         {items.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition ${
+            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition ${
               index === currentIndex
-                ? "bg-red-600 w-6"
+                ? "bg-red-600 w-4 md:w-6"
                 : "bg-red-500 hover:bg-red-600"
             }`}
             aria-label={`Go to slide ${index + 1}`}
