@@ -163,7 +163,7 @@ const ContactForm = () => {
             <FiUpload className="text-4xl text-primary mb-2" />
             <span className="font-bold text-primary">Upload your CV</span>
             <span className="text-xs text-gray-500 mt-1">
-              Allowed formats: PDF, PNG & JPEG
+              Allowed formats: PDF, DOCX, PPTX
             </span>
             {cvFile && (
               <span className="mt-2 text-green-700 font-semibold">{cvFile.name}</span>
