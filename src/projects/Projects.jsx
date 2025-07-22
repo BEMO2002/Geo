@@ -112,18 +112,18 @@ const Projects = () => {
               return (
                 <div
                   key={item.id}
-                  className="flex flex-col-reverse md:flex-row bg-white md:rounded-[24px] rounded-lg shadow-[0px_4px_4px_0px_#DBE8E3] border border-[#0a4267]/10 overflow-hidden md:h-[400px] mb-4"
+                  className="flex flex-col-reverse md:flex-row bg-white md:rounded-[24px] rounded-lg shadow-[0px_4px_4px_0px_#DBE8E3]  overflow-hidden md:h-[400px] mb-4"
                 >
                   {/* النص */}
-                  <div className="flex-1 flex flex-col justify-center items-start p-8 md:p-12 text-left h-full overflow-hidden">
-                    <h3 className="text-2xl md:text-4xl font-extrabold mb-4 leading-tight text-[#222]">
+                  <div className="flex-1 flex flex-col justify-center items-start p-6 md:p-12 text-left h-full overflow-hidden">
+                    <h3 className="text-xl md:text-4xl font-extrabold mb-4 leading-tight text-[#222]">
                       {item.title}
                     </h3>
                     <p className="text-[#444444] mb-6 max-w-2xl line-clamp-3 md:line-clamp-none">
                       {item.brief || item.description}
                     </p>
                     <button
-                      className="bg-red-700 text-white px-8 py-3 mb-3 rounded-none font-bold text-lg hover:bg-white hover:text-red-700 border-2 border-red-700 transition duration-300"
+                      className="bg-red-700 text-white md:px-8 md:py-3 px-4 py-2 mb-3 rounded-none font-bold text-lg hover:bg-white hover:text-red-700 border-2 border-red-700 transition duration-300"
                       onClick={() => navigate(`/projects/${item.slug}`)}
                     >
                       Project Details

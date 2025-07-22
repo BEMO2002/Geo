@@ -55,7 +55,7 @@ const ProjectsDetails = () => {
           <img
             src={mainImage.url}
             alt={project.title}
-            className="w-full h-[320px] md:h-[400px] object-cover object-center rounded-[16px] border-4 border-[#0a4267] cursor-pointer"
+            className="w-full h-[320px] md:h-[400px] object-cover object-center rounded-[16px]  cursor-pointer"
             onClick={() => setPopupImg(mainImage.url)}
           />
         )}
@@ -67,7 +67,7 @@ const ProjectsDetails = () => {
                 key={img.id}
                 src={img.url}
                 alt={project.title}
-                className="h-24 w-36 object-cover rounded-lg cursor-pointer border border-[#0a4267]/40 hover:border-[#0a4267] transition"
+                className="h-24 w-36 object-cover rounded-lg cursor-pointer  transition"
                 onClick={() => setPopupImg(img.url)}
               />
             ))}
@@ -111,13 +111,13 @@ const ProjectsDetails = () => {
       {/* Popup for image viewing */}
       {popupImg && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 "
           onClick={() => setPopupImg(null)}
         >
           <img
             src={popupImg}
             alt="Project Detail Large"
-            className="max-h-[90vh] max-w-[90vw] rounded-lg border-4 border-[#0a4267] shadow-lg"
+            className="max-h-[90vh] max-w-[90vw] rounded-lg  shadow-lg"
             onClick={(e) => e.stopPropagation()}
           />
           <button

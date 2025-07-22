@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { FiUpload } from "react-icons/fi";
 const initialState = {
   Name: "",
   Email: "",
@@ -9,10 +10,14 @@ const initialState = {
   Message: "",
 };
 
+const allowedTypes = ["application/pdf", "image/png", "image/jpeg"];
+
 const ContactForm = () => {
   const [form, setForm] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [cvFile, setCvFile] = useState(null);
+  const [cvError, setCvError] = useState("");
 
   const validate = () => {
     const newErrors = {};
@@ -33,18 +38,36 @@ const ContactForm = () => {
     setErrors({ ...errors, [e.target.name]: "" });
   };
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file && !allowedTypes.includes(file.type)) {
+      setCvError("Only PDF, PNG, JPEG files are allowed.");
+      setCvFile(null);
+    } else {
+      setCvError("");
+      setCvFile(file);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
     try {
+      const formData = new FormData();
+      Object.entries(form).forEach(([key, value]) =>
+        formData.append(key, value)
+      );
+      if (cvFile) formData.append("AssetFile", cvFile);
+
       const res = await axios.post(
         "https://geoduke.runasp.net/api/contactmessages",
-        form
+        formData
       );
       if (res.status === 200 || res.status === 201) {
         toast.success("Message sent successfully!");
         setForm(initialState);
+        setCvFile(null);
       } else {
         toast.error("Failed to send message. Please try again.");
       }
@@ -125,6 +148,36 @@ const ContactForm = () => {
           {errors.Message && (
             <p className="text-red-500 text-sm mt-1">{errors.Message}</p>
           )}
+        </div>
+        {/* CV Upload */}
+                  <div className="mt-2 text-left text-sm text-gray-700">
+            If you are applying for a job, please upload your CV.<br />
+            If you are contacting us as a client, you can ignore the CV upload and just send your details.
+          </div>
+        <div className="mb-4">
+          <label className="block mb-1 font-semibold">CV (optional)</label>
+          <div
+            className="border-2 border-dashed border-primary rounded-lg p-4 flex flex-col items-center cursor-pointer hover:bg-primary/5 transition"
+            onClick={() => document.getElementById("cv-upload").click()}
+          >
+            <FiUpload className="text-4xl text-primary mb-2" />
+            <span className="font-bold text-primary">Upload your CV</span>
+            <span className="text-xs text-gray-500 mt-1">
+              Allowed formats: PDF, PNG & JPEG
+            </span>
+            {cvFile && (
+              <span className="mt-2 text-green-700 font-semibold">{cvFile.name}</span>
+            )}
+            <input
+              id="cv-upload"
+              type="file"
+              accept=".pdf,.png,.jpg,.jpeg"
+              className="hidden"
+              onChange={handleFileChange}
+            />
+          </div>
+          {cvError && <p className="text-red-500 text-sm mt-1">{cvError}</p>}
+
         </div>
         <button
           type="submit"

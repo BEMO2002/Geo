@@ -100,8 +100,9 @@ const SolutionDetails = () => {
         <h1 className="text-3xl md:text-4xl font-bold mb-2 text-[#0a4267]">
           {solution.title}
         </h1>
-        <div className="text-lg text-gray-700 mb-4 whitespace-pre-line">
-          {solution.description}
+        <div 
+        dangerouslySetInnerHTML={{ __html: solution.description }}
+        className="text-lg text-gray-700 mb-4 whitespace-pre-line">
         </div>
         <Accordion title="Overview">
           <div className="whitespace-pre-line">{solution.overview}</div>
@@ -113,7 +114,7 @@ const SolutionDetails = () => {
         {solution.assets && solution.assets.length > 0 && (
           <div className="mt-6">
             <h3 className="text-lg font-semibold mb-2">Downloads</h3>
-            <ul className="flex flex-row gap-5">
+            <ul className="flex md:flex-row flex-col flex-wrap justify-start  gap-5  ">
               {solution.assets.map((asset) => (
                 <li key={asset.id}>
                   <a

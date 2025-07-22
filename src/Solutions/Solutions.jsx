@@ -96,8 +96,10 @@ const Solutions = () => {
                     <h3 className="text-2xl font-extrabold mb-2 leading-tight text-[#222]">
                       {item.title}
                     </h3>
-                    <p className="text-[#444444] mb-6 line-clamp-2">
-                      {item.description}
+                    <p
+                      dangerouslySetInnerHTML={{ __html: item.description }}
+                      className="text-[#444444] mb-6 line-clamp-2"
+                    >
                     </p>
                     <button
                       className="  font-semibold underline text-primary w-fit   text-lg cursor-pointer "
