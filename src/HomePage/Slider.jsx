@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { TfiArrowTopRight } from "react-icons/tfi";
+import { useSwipeable } from "react-swipeable";
 import image1 from "../assets/home/whygeo.png";
 import image2 from "../assets/home/Project.png";
 import image3 from "../assets/home/Picture1.png";
@@ -36,12 +37,38 @@ const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
     return () => clearTimeout(timer);
   }, [currentIndex, isPaused]);
 
+  const handlers = useSwipeable({
+    onSwipedLeft: goToNext,
+    onSwipedRight: goToPrev,
+    trackMouse: true,
+  });
+
   return (
     <div
-      className="relative w-full h-[90vh] max-h-screen overflow-hidden  md:mt-0 z-20 "
-      onMouseEnteroverflow-hidden={() => setIsPaused(true)}
+      {...handlers}
+      className="relative w-full h-[80vh] max-h-screen overflow-hidden  md:mt-0 z-20 "
+      onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
+      {/* Arrows overlay */}
+      <div className="absolute hidden top-1/2 left-4 z-30 -translate-y-1/2  flex-col gap-2">
+        <button
+          onClick={goToPrev}
+          className="p-2 md:p-3 shadow-lg bg-white text-black hover:bg-black hover:text-white transition duration-300 rounded-full"
+          aria-label="Previous slide"
+        >
+          <FiChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
+      </div>
+      <div className="absolute hidden top-1/2 right-4 z-30 -translate-y-1/2  flex-col gap-2">
+        <button
+          onClick={goToNext}
+          className="p-2 md:p-3 shadow-lg bg-white text-black hover:bg-black hover:text-white transition duration-300 rounded-full"
+          aria-label="Next slide"
+        >
+          <FiChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
+      </div>
       {/* Slides */}
       <div className="relative w-full h-full transition-transform duration-700 ease-in-out">
         {items.map((item, index) => (
@@ -86,21 +113,21 @@ const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
                         <FiChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                       </button>
                     </div>
-                    <div className="pt-12 md:pt-14">
+                    <div className="pt-12 md:pt-14 text-left">
                       {" "}
                       {/* Add padding to avoid overlap with arrows */}
                       {item.paragraph && (
-                        <h2 className="text-xl md:text-3xl lg:text-6xl font-semibold mb-2 md:mb-4 text-black leading-tight break-words">
+                        <h2 className="text-xl md:text-3xl lg:text-6xl font-semibold mb-2 md:mb-4 text-black leading-tight break-words text-left">
                           {item.paragraph}
                         </h2>
                       )}
                       {item.title && (
-                        <h3 className="md:text-xl lg:text-4xl mb-1 md:mb-2 text-primary break-words">
+                        <h3 className="md:text-xl w-full max-w-xs md:max-w-xl lg:text-4xl mb-1 md:mb-2 text-primary break-words">
                           {item.title}
                         </h3>
                       )}
                       {item.description && (
-                        <p className="text-sm md:text-xl w-full max-w-xs md:max-w-md text-black mb-4 md:mb-6 leading-6 md:leading-7 break-words">
+                        <p className="text-sm md:text-xl w-full max-w-xs md:max-w-xl text-black mb-4 md:mb-6 leading-6 md:leading-7 break-words">
                           {item.description}
                         </p>
                       )}
@@ -127,7 +154,7 @@ const ProfessionalCarousel = ({ items, autoPlay = true, interval = 5000 }) => {
                     viewport={{ once: false, amount: 0 }}
                     className="max-w-full lg:w-1/2 relative mt-4 md:mt-0"
                   >
-                    <div className="relative w-[80vw] max-w-xs h-[80vw] max-h-xs md:w-full md:h-[400px] flex items-center justify-center mx-auto">
+                    <div className="relative w-[330px] md:w-auto h-48  md:h-[400px] flex items-center justify-center">
                       <img
                         src={item.image}
                         alt={item.alt || `Slide ${index + 1}`}
