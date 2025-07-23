@@ -2,17 +2,27 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { FiUpload } from "react-icons/fi";
+
 const initialState = {
   Name: "",
   Email: "",
   Phone: "",
-  Message: "",
+  JobTitle: "",
 };
 
-const ContactForm = () => {
+const allowedTypes = [
+  "application/pdf",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document", // .docx
+  "application/vnd.openxmlformats-officedocument.presentationml.presentation", // .pptx
+];
+
+const CareerForm = () => {
   const [form, setForm] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [cvFile, setCvFile] = useState(null);
+  const [cvError, setCvError] = useState("");
 
   const validate = () => {
     const newErrors = {};
@@ -23,7 +33,8 @@ const ContactForm = () => {
     if (!form.Phone.trim()) newErrors.Phone = "Phone is required";
     else if (!/^\d{10,15}$/.test(form.Phone))
       newErrors.Phone = "Phone must be 10-15 digits";
-    if (!form.Message.trim()) newErrors.Message = "Message is required";
+    if (!form.JobTitle.trim()) newErrors.JobTitle = "Job title is required";
+    if (!cvFile) newErrors.AssetFile = "CV is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -31,6 +42,17 @@ const ContactForm = () => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" });
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file && !allowedTypes.includes(file.type)) {
+      setCvError("Only PDF, DOCX, PPTX files are allowed.");
+      setCvFile(null);
+    } else {
+      setCvError("");
+      setCvFile(file);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -42,15 +64,18 @@ const ContactForm = () => {
       Object.entries(form).forEach(([key, value]) =>
         formData.append(key, value)
       );
+      if (cvFile) formData.append("AssetFile", cvFile);
+
       const res = await axios.post(
-        "https://geoduke.runasp.net/api/contactmessages",
+        "https://geoduke.runasp.net/api/careermessages",
         formData
       );
       if (res.status === 200 || res.status === 201) {
-        toast.success("Message sent successfully!");
+        toast.success("Application sent successfully!");
         setForm(initialState);
+        setCvFile(null);
       } else {
-        toast.error("Failed to send message. Please try again.");
+        toast.error("Failed to send application. Please try again.");
       }
     } catch {
       toast.error("An error occurred. Please try again.");
@@ -60,10 +85,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-2xl  mx-auto p-6 bg-white rounded-lg shadow-[0px_4px_10px_3px_#0000001A] mt-20  mb-20">
+    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-[0px_4px_10px_3px_#0000001A] mt-20 mb-20">
       <ToastContainer position="top-center" />
       <h2 className="text-2xl font-bold uppercase mb-6 text-center text-primary">
-        Contact Us
+        Career Application
       </h2>
       <form onSubmit={handleSubmit} noValidate>
         <div className="mb-4">
@@ -115,19 +140,50 @@ const ContactForm = () => {
           )}
         </div>
         <div className="mb-4">
-          <label className="block mb-1 font-semibold">Message</label>
-          <textarea
-            name="Message"
-            value={form.Message}
+          <label className="block mb-1 font-semibold">Job Title</label>
+          <input
+            type="text"
+            name="JobTitle"
+            value={form.JobTitle}
             onChange={handleChange}
-            rows={5}
             className={`w-full px-4 py-2 border rounded focus:outline-none ${
-              errors.Message ? "border-red-500" : "border-gray-300"
+              errors.JobTitle ? "border-red-500" : "border-gray-300"
             }`}
-            placeholder="Your Message"
+            placeholder="e.g. Software Engineer"
           />
-          {errors.Message && (
-            <p className="text-red-500 text-sm mt-1">{errors.Message}</p>
+          {errors.JobTitle && (
+            <p className="text-red-500 text-sm mt-1">{errors.JobTitle}</p>
+          )}
+        </div>
+        {/* CV Upload */}
+        <div className="mb-4">
+          <label className="block mb-1 font-semibold">CV (required)</label>
+          <div
+            className="border-2 border-dashed border-primary rounded-lg p-4 flex flex-col items-center cursor-pointer hover:bg-primary/5 transition"
+            onClick={() => document.getElementById("career-cv-upload").click()}
+          >
+            <FiUpload className="text-4xl text-primary mb-2" />
+            <span className="font-bold text-primary">Upload your CV</span>
+            <span className="text-xs text-gray-500 mt-1">
+              Allowed formats: PDF, DOCX, PPTX
+            </span>
+            {cvFile && (
+              <span className="mt-2 text-green-700 font-semibold">
+                {cvFile.name}
+              </span>
+            )}
+            <input
+              id="career-cv-upload"
+              type="file"
+              accept=".pdf,.docx,.pptx"
+              className="hidden"
+              onChange={handleFileChange}
+            />
+          </div>
+          {(cvError || errors.AssetFile) && (
+            <p className="text-red-500 text-sm mt-1">
+              {cvError || errors.AssetFile}
+            </p>
           )}
         </div>
         <button
@@ -135,11 +191,11 @@ const ContactForm = () => {
           disabled={loading}
           className="w-full bg-primary text-white font-bold py-3 rounded hover:bg-primary/90 transition disabled:opacity-60"
         >
-          {loading ? "Sending..." : "Send Message"}
+          {loading ? "Sending..." : "Send Application"}
         </button>
       </form>
     </div>
   );
 };
 
-export default ContactForm;
+export default CareerForm;
