@@ -220,7 +220,7 @@ const Slider = () => {
       description:
         "Join GEODUKE and be part of shaping the future through transformative infrastructure and construction projects that make a lasting impact.",
       cta: "Explore Careers",
-      href: "/who",
+      href: "/contact",
     },
     {
       id: 4,
@@ -229,8 +229,8 @@ const Slider = () => {
       title: "From concept to completion, we deliver strength and reliability.",
       description:
         "GEODUKE specializes in the supply, design, and installation of Mechanically Stabilized Earth (MSE) walls, offering end-to-end solutions for our projects. ",
-      cta: "Explore Services",
-      href: "/services",
+      cta: "Explore Solutions",
+      href: "/solutions",
     },
   ];
 
