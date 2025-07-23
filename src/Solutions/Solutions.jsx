@@ -11,7 +11,7 @@ const Solutions = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://geoduke.runasp.net/api/solutions", {
+      .get("https://api.geoduke.com/solutions", {
         params: { pageNumber: 1, pageSize: 10 },
       })
       .then((res) => {
@@ -99,8 +99,7 @@ const Solutions = () => {
                     <p
                       dangerouslySetInnerHTML={{ __html: item.description }}
                       className="text-[#444444] mb-6 line-clamp-2"
-                    >
-                    </p>
+                    ></p>
                     <button
                       className="  font-semibold underline text-primary w-fit   text-lg cursor-pointer "
                       onClick={() => navigate(`/solutions/${item.slug}`)}
