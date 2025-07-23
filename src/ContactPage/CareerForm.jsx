@@ -149,7 +149,7 @@ const CareerForm = () => {
             className={`w-full px-4 py-2 border rounded focus:outline-none ${
               errors.JobTitle ? "border-red-500" : "border-gray-300"
             }`}
-            placeholder="e.g. Software Engineer"
+            placeholder="e.g."
           />
           {errors.JobTitle && (
             <p className="text-red-500 text-sm mt-1">{errors.JobTitle}</p>
