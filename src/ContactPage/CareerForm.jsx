@@ -67,7 +67,7 @@ const CareerForm = () => {
       if (cvFile) formData.append("AssetFile", cvFile);
 
       const res = await axios.post(
-        "https://geoduke.runasp.net/api/careermessages",
+        "https://api.geoduke.com/careermessages",
         formData
       );
       if (res.status === 200 || res.status === 201) {

@@ -43,7 +43,7 @@ const ContactForm = () => {
         formData.append(key, value)
       );
       const res = await axios.post(
-        "https://geoduke.runasp.net/api/contactmessages",
+        "https://api.geoduke.com/contactmessages",
         formData
       );
       if (res.status === 200 || res.status === 201) {

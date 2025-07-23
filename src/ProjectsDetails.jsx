@@ -11,7 +11,7 @@ const ProjectsDetails = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://geoduke.runasp.net/api/projects?pageNumber=1&pageSize=100")
+    fetch("https://api.geoduke.com/projects?pageNumber=1&pageSize=100")
       .then((res) => res.json())
       .then((data) => {
         const found = data.find((item) => item.slug === slug);

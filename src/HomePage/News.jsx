@@ -24,7 +24,7 @@ const News = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://geoduke.runasp.net/api/news")
+    fetch("https://api.geoduke.com/news")
       .then((res) => res.json())
       .then((data) => {
         setNewsItems(data);

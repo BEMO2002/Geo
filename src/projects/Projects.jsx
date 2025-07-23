@@ -13,7 +13,7 @@ const Projects = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://geoduke.runasp.net/api/projects", {
+      .get("https://api.geoduke.com/projects", {
         params: { pageNumber: 1, pageSize },
       })
       .then((res) => {

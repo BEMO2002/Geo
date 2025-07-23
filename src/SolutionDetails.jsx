@@ -14,9 +14,7 @@ const Accordion = ({ title, children }) => {
         <span>{title}</span>
         <span className="text-2xl">{open ? <FiMinus /> : <FiPlus />}</span>
       </button>
-      {open && (
-        <div className="pb-4 px-2  text-gray-700">{children}</div>
-      )}
+      {open && <div className="pb-4 px-2  text-gray-700">{children}</div>}
     </div>
   );
 };
@@ -29,7 +27,7 @@ const SolutionDetails = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://geoduke.runasp.net/api/solutions", {
+      .get("https://api.geoduke.com/solutions", {
         params: { pageNumber: 1, pageSize: 100 },
       })
       .then((res) => {
@@ -100,10 +98,10 @@ const SolutionDetails = () => {
         <h1 className="text-3xl md:text-4xl font-bold mb-2 text-[#0a4267]">
           {solution.title}
         </h1>
-        <div 
-        dangerouslySetInnerHTML={{ __html: solution.description }}
-        className="text-lg text-gray-700 mb-4 whitespace-pre-line">
-        </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: solution.description }}
+          className="text-lg text-gray-700 mb-4 whitespace-pre-line"
+        ></div>
         <Accordion title="Overview">
           <div className="whitespace-pre-line">{solution.overview}</div>
         </Accordion>

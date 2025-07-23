@@ -10,7 +10,7 @@ const NewsDetails = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://geoduke.runasp.net/api/news")
+    fetch("https://api.geoduke.com/news")
       .then((res) => res.json())
       .then((data) => {
         const found = data.find((item) => item.slug === slug);
@@ -67,9 +67,9 @@ const NewsDetails = () => {
         {news.subTitle}
       </h2>
       <div
-  className="text-base leading-relaxed"
-  dangerouslySetInnerHTML={{ __html: news.description }}
-/>
+        className="text-base leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: news.description }}
+      />
     </div>
   );
 };
