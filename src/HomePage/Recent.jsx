@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Recent = () => {
   return (
-    <div className="flex flex-col md:flex-row  h-[70vh] pb-20">
+    <div className="flex flex-col md:flex-row  md:h-[70vh] pb-20">
       {/* Left Side - Image */}
       <div className="flex-1 overflow-hidden">
         <img
