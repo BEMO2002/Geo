@@ -99,14 +99,11 @@ const ProjectsDetails = () => {
         <p className=" text-[#444444] mb-2 font-medium">
           Value: {project.value}
         </p>
-        <p className="text-[#444444] mb-4 font-medium">
-          {project.brief}
-        </p>
+        <p className="text-[#444444] mb-4 font-medium">{project.brief}</p>
         <div
-        dangerouslySetInnerHTML={{ __html: project.description }}
-        className="whitespace-pre-line  leading-relaxed mb-4 text-[#444] max-h-[180px] overflow-auto pr-2">
-          
-        </div>
+          dangerouslySetInnerHTML={{ __html: project.description }}
+          className="whitespace-pre-line  w-[350px] md:w-full text-sm  leading-relaxed mb-4 text-[#444] max-h-[180px] overflow-auto pr-2"
+        ></div>
       </div>
       {/* Popup for image viewing */}
       {popupImg && (
