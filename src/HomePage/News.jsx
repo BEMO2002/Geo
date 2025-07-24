@@ -7,14 +7,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import shape from "../assets/home/Picture3.png";
-const formatDate = (date) => {
-  const d = new Date(date);
-  return d.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-};
+
 
 const News = () => {
   const [newsItems, setNewsItems] = useState([]);
@@ -90,9 +83,7 @@ const News = () => {
                     className="w-full h-48 object-cover rounded-t-[24px]"
                   />
                   <div className="p-4 text-left flex flex-col flex-grow">
-                    <p className="text-sm text-[#444444] mb-2 font-semibold">
-                      {formatDate(item.createdAt)}
-                    </p>
+
                     <h3 className="text-lg font-bold mb-1 leading-snug line-clamp-2 text-[#444444]">
                       {item.title}
                     </h3>

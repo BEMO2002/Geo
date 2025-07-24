@@ -8,14 +8,12 @@ const ProjectsDetails = () => {
   const [loading, setLoading] = useState(true);
   const [popupImg, setPopupImg] = useState(null);
   const navigate = useNavigate();
-
   useEffect(() => {
     setLoading(true);
-    fetch("https://api.geoduke.com/projects?pageNumber=1&pageSize=100")
+    fetch("https://api.geoduke.com/projects/" + slug)
       .then((res) => res.json())
       .then((data) => {
-        const found = data.find((item) => item.slug === slug);
-        setProject(found);
+        setProject(data);
         setLoading(false);
       });
   }, [slug]);
@@ -90,9 +88,12 @@ const ProjectsDetails = () => {
         <h2 className="text-lg font-semibold text-[#0a4267] mb-2">
           {project.client}
         </h2>
-        <p className=" text-[#444444] mb-2 font-medium">
-          Value: {project.value}
-        </p>
+        {Boolean(project.value) && project.value !== "null" && (
+          <p className="text-[#444444] mb-2 font-medium">
+            Value: {project.value}
+          </p>
+        )}
+
         <p className="text-[#444444] mb-4 font-medium">{project.brief}</p>
         <div
           dangerouslySetInnerHTML={{ __html: project.description }}

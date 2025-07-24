@@ -10,11 +10,10 @@ const NewsDetails = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://api.geoduke.com/news")
+    fetch("https://api.geoduke.com/news/" + slug)
       .then((res) => res.json())
       .then((data) => {
-        const found = data.find((item) => item.slug === slug);
-        setNews(found);
+        setNews(data);
         setLoading(false);
       });
   }, [slug]);
@@ -55,13 +54,7 @@ const NewsDetails = () => {
         alt={news.title}
         className="w-full h-64 object-cover rounded-lg mb-4"
       />
-      <p className="text-sm text-gray-500 mb-4">
-        {new Date(news.createdAt).toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })}
-      </p>
+
       <h1 className="text-2xl font-bold text-[#0a4267] mb-2">{news.title}</h1>
       <h2 className="text-lg font-semibold text-[#0a4267] mb-2">
         {news.subTitle}
