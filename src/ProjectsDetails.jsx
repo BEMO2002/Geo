@@ -83,13 +83,7 @@ const ProjectsDetails = () => {
           <MdArrowBack size={22} />
           Back
         </button>
-        <p className="text-sm text-gray-500 mb-2">
-          {new Date(project.createdAt).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </p>
+
         <h1 className="text-3xl md:text-4xl font-extrabold mb-4 leading-tight text-[#222]">
           {project.title}
         </h1>
