@@ -26,7 +26,7 @@ const Recent = () => {
           className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-0"
         />
         <div
-          className="relative z-10 max-w-2xl p-10 lg:p-0
+          className="relative z-10 max-w-2xl pt-10 pb-10 lg:p-0
          "
         >
           <h1 className="text-3xl md:text-5xl font-semibold mb-6 ">
