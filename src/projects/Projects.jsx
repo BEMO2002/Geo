@@ -6,51 +6,23 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-  const [pageSize, setPageSize] = useState(10);
-  const [allProjects, setAllProjects] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
     axios
       .get("https://api.geoduke.com/projects", {
-        params: { pageNumber: 1, pageSize },
+        params: { pageNumber: 1 },
       })
       .then((res) => {
         setProjects(res.data);
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, [pageSize]);
-
-  // For search, fetch all projects (up to 100 for practical search)
-  useEffect(() => {
-    axios
-      .get("https://geoduke.runasp.net/api/projects", {
-        params: { pageNumber: 1, pageSize: 100 },
-      })
-      .then((res) => setAllProjects(res.data));
   }, []);
 
-  const filteredProjects = search
-    ? allProjects.filter(
-        (item) =>
-          (item.title &&
-            item.title.toLowerCase().includes(search.toLowerCase())) ||
-          (item.client &&
-            item.client.toLowerCase().includes(search.toLowerCase())) ||
-          (item.value &&
-            item.value.toLowerCase().includes(search.toLowerCase())) ||
-          (item.brief &&
-            item.brief.toLowerCase().includes(search.toLowerCase())) ||
-          (item.description &&
-            item.description.toLowerCase().includes(search.toLowerCase())) ||
-          (item.createdAt &&
-            new Date(item.createdAt)
-              .toLocaleDateString("en-US")
-              .includes(search))
-      )
-    : projects;
+  // استخدم projects مباشرة بدون فلترة
+  const filteredProjects = projects;
 
   if (loading) {
     return (
@@ -70,35 +42,22 @@ const Projects = () => {
           <h2 className="text-2xl md:text-3xl uppercase font-bold text-left text-base">
             Projects
           </h2>
-          <div className="flex flex-row gap-2 items-center">
-            <div className="relative flex items-center  w-80 max-w-full">
-              <input
-                type="text"
-                placeholder="Search by anything..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="border border-primary/50 rounded-md px-3 py-2 focus:outline-none  text-[#000] w-full pr-20 "
-                style={{ minWidth: "200px" }}
-              />
-              <button
-                className="absolute right-0 top-1/2 -translate-y-1/2 bg-primary text-white px-4 py-2 rounded-md rounded-l-none font-semibold transition "
-                type="button"
-                tabIndex={-1}
-              >
-                Search
-              </button>
-            </div>
-            <select
-              value={pageSize}
-              onChange={(e) => setPageSize(Number(e.target.value))}
-              className="border border-primary/50 rounded-md px-3 py-2 focus:outline-none  text-base"
+          <div className="relative flex items-center  w-80 max-w-full">
+            <input
+              type="text"
+              placeholder="Search by anything..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="border border-primary/50 rounded-md px-3 py-2 focus:outline-none  text-[#000] w-full pr-20 "
+              style={{ minWidth: "200px" }}
+            />
+            <button
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-primary text-white px-4 py-2 rounded-md rounded-l-none font-semibold transition "
+              type="button"
+              tabIndex={-1}
             >
-              {[5, 10, 20, 50, 100].map((size) => (
-                <option key={size} value={size}>
-                  {size} per page
-                </option>
-              ))}
-            </select>
+              Search
+            </button>
           </div>
         </div>
         <div className="flex flex-col gap-10">

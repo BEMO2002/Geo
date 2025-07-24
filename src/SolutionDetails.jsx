@@ -105,7 +105,7 @@ const SolutionDetails = () => {
         <Accordion title="Overview">
           <div className="whitespace-pre-line">{solution.overview}</div>
         </Accordion>
-        <Accordion title="System Components">
+        <Accordion title="System Solutions">
           <div className="whitespace-pre-line">{solution.systemComponents}</div>
         </Accordion>
         {/* Assets */}
