@@ -1,11 +1,11 @@
 import React from "react";
-import splitImg from "../assets/home/img-split-panel-recent-work-01-960x750.jpg";
+import splitImg from "../assets/home/recent.jpg";
 import recentVideo from "../assets/home/recent.mp4";
 import { Link } from "react-router-dom";
 
 const Recent = () => {
   return (
-    <div className="flex flex-col md:flex-row  min-h-0.5 pb-20">
+    <div className="flex flex-col md:flex-row  h-[70vh] pb-20">
       {/* Left Side - Image */}
       <div className="flex-1 overflow-hidden">
         <img
@@ -30,12 +30,14 @@ const Recent = () => {
             Recent Work
           </h1>
           <p className="md:text-lg text-sm mb-8 leading-relaxed ">
-            Explore our recent commercial and residential retaining wall
-            projects, showcasing the latest innovations and exceptional
-            craftsmanship. At ROSCH Company, we deliver superior solutions
-            tailored to meet each client's unique needs. From versatile modular
-            block walls to mortared limestone structures, our portfolio reflects
-            our commitment to excellence in every detail.
+            Discover how GEODUKE is shaping the landscape with cutting-edge MSE
+            wall and retaining wall projects across infrastructure, commercial,
+            and urban development sectors. Our work combines innovative
+            engineering, high-quality materials, and meticulous attention to
+            detail to deliver robust, aesthetic, and sustainable wall systems.
+            Every project we undertake reflects our dedication to customized
+            solutions that meet the functional and architectural demands of
+            modern construction.
           </p>
           <Link
             to="/projects"
