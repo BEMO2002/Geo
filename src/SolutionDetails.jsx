@@ -27,11 +27,11 @@ const SolutionDetails = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://api.geoduke.com/solutions", {
+      .get("https://api.geoduke.com/solutions/" + slug, {
         params: { pageNumber: 1, pageSize: 100 },
       })
       .then((res) => {
-        const found = res.data.find((item) => item.slug === slug);
+        const found = res.data;
         setSolution(found);
         setLoading(false);
       })
@@ -106,7 +106,7 @@ const SolutionDetails = () => {
           <div className="whitespace-pre-line">{solution.overview}</div>
         </Accordion>
         <Accordion title="Key Features">
-          <div className="whitespace-pre-line">{solution.KeyFeatures}</div>
+          <div className="whitespace-pre-line">{solution.keyFeatures}</div>
         </Accordion>
         {/* Assets */}
         {solution.assets && solution.assets.length > 0 && (
