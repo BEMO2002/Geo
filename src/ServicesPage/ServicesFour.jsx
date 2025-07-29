@@ -8,7 +8,7 @@ const ServicesFour = () => {
         <img
           src={AboutTwoImage}
           alt="About Two"
-          className="  object-cover shadow-lg"
+          className="  object-cover shadow-lg rounded-lg"
         />
       </div>
       {/* Right Side: Text */}
@@ -18,12 +18,14 @@ const ServicesFour = () => {
           Quality Control & Testing
         </h2>
         <p className="mb-5 leading-relaxed ">
-        <span className="text-red-600 font-bold">GEO</span><span className="text-second font-bold">DUKE</span> ensures that all materials and construction practices meet
-          stringent quality standards, including the use of specific testing
-          methods for backfill materials and reinforcement connections. All
-          materials and construction processes undergo rigorous testing and
-          quality control, ensuring long-term performance and compliance with
-          national and international standards.
+          <span className="text-red-600 font-bold">GEO</span>
+          <span className="text-second font-bold">DUKE</span> ensures that all
+          materials and construction practices meet stringent quality standards,
+          including the use of specific testing methods for backfill materials
+          and reinforcement connections. All materials and construction
+          processes undergo rigorous testing and quality control, ensuring
+          long-term performance and compliance with national and international
+          standards.
         </p>
         <p className="mb-5 leading-relaxed ">
           We prioritize safety, reliability, and performance through rigorous

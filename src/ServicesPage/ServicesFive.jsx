@@ -30,7 +30,7 @@ const ServicesFive = () => {
         <img
           src={AboutTwoImage}
           alt="About Two"
-          className="  object-cover shadow-lg md:h-[600px]"
+          className="  object-cover shadow-lg md:h-[600px] rounded-lg"
         />
       </div>
     </div>
